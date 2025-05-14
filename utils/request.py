@@ -11,12 +11,12 @@ class Request:
     def get(self, url, **kwargs) -> BaseExecute:
 
         @tenacity.retry(stop=tenacity.stop.stop_after_attempt(3), wait=tenacity.wait.wait_fixed(0.5))
-        def _send_request():
+        def _get():
             return self.session.get(url, **kwargs)
 
         base_execute = BaseExecute()
         try:
-            response = _send_request()
+            response = _get()
         except tenacity.RetryError:
             base_execute.success, base_execute.message = False, "tenacity.RetryError"
         except Exception as e:
