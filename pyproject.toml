@@ -15,3 +15,7 @@ requests = "^2.32.3"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.packages]
+[[tool.poetry.packages]]
+include = "utils"
