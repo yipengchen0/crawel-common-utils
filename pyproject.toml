@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "crawel-common-utils"
+version = "0.1.0"
+description = ""
+authors = ["pixocial.com"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pydantic = "^2.11.4"
+tenacity = "^9.1.2"
+requests = "^2.32.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
